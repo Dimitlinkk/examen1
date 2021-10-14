@@ -1,0 +1,25 @@
+import operator
+    
+entrada=input("Introduce una cadena: ")
+
+ 
+
+diccionario={}
+
+ 
+
+for letra in entrada:
+
+    if letra in diccionario:
+
+        diccionario[letra]=diccionario[letra]+1
+
+    else:
+
+        diccionario[letra]=1
+
+ 
+
+sort = sorted(diccionario.items(), key=operator.itemgetter(1), reverse=True)
+for letra in enumerate(sort):
+    print(letra[1][0], '', diccionario[letra[1][0]])
